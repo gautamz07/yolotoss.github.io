@@ -1,11 +1,12 @@
 CMD + SHIFT + A - Archive ( go right to the top for this to work )
 CMD + D - Toggle done
 
+- Come up with color scheme for headers
+  - Actually color scheme should be universal for the whole site.
+- create footer and privacy poly
+- add term nd c in footer.
 - Add prefetch for image
-- ( IMPORTANT ) Number of heads and tails should show for every session
 - disable button when animation is on going.
-- improve button hover animation for toss.
-- ( IMPORTANT ) - Add "Last result" above "last 5 results"
 - ( IMPORTANT ) - Add option for toss multiple times 
   - Maybe add select option 
   - use animation iteration for this maybe.
@@ -20,7 +21,20 @@ CMD + D - Toggle done
   - For reference :- https://rahuln.hashnode.dev/animate-button-using-css
   - ( STAGE 2 - NOT PRIORITY RN )For reference - inspiration - https://www.sliderrevolution.com/resources/css-button-hover-effects/
 
+- Some CSS inspirations for headers and buttons
+  - https://css-tricks.com/gradient-borders-in-css/
+  - https://devdevout.com/css/css-gradient-borders
+  - https://codepen.io/valix85/pen/ZPXBOV
+  - https://codepen.io/jleon253/pen/QWjpMxy ( can be used for dark mode )
+  - https://codepen.io/unnegative/pen/dVwYBq
+
+
 - Some good inspirations for text animations 
   - https://www.codesdope.com/blog/article/25-creative-css3-text-shadow-effects-you-cant-miss/
+- Good resource for color pallets
+  - https://search.muz.li/ODEyYmIzM2Vm
 
 Archive:
+- improve button hover animation for toss. @done
+- ( IMPORTANT ) - Add "Last result" above "last 5 results" @done
+- ( IMPORTANT ) Number of heads and tails should show for every session @done

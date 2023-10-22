@@ -18,13 +18,13 @@ const resultStr = []
 const generateOutCome = () => {
 
   let fraction = +(Math.random() * 1).toFixed(2)
-  if (resultStr.length === 2) {
-    if((resultStr[ resultStr.length - 1 ] === resultStr[ resultStr.length - 2 ]) && (resultStr[ resultStr.length - 1 ] === 'heads')) {
-      fraction = 0
-    } else if((resultStr[ resultStr.length - 1 ] === resultStr[ resultStr.length - 2 ]) && (resultStr[ resultStr.length - 1 ] === 'tails')) {
-      fraction = 1
-    }
-  }
+  // if (resultStr.length === 2) {
+  //   if((resultStr[ resultStr.length - 1 ] === resultStr[ resultStr.length - 2 ]) && (resultStr[ resultStr.length - 1 ] === 'heads')) {
+  //     fraction = 0
+  //   } else if((resultStr[ resultStr.length - 1 ] === resultStr[ resultStr.length - 2 ]) && (resultStr[ resultStr.length - 1 ] === 'tails')) {
+  //     fraction = 1
+  //   }
+  // }
   const result =  (fraction > 0.5) ? outcomes[0] : outcomes[1]
   resultStr.push(result.text)
   return result
@@ -52,15 +52,17 @@ addEventListener("animationend", (event) => {
   LIST_ELEMENT.classList.add(resultStr[resultStr.length - 1]);
   document.getElementById('lastfewresults').appendChild(LIST_ELEMENT)
 
-  if (resultStr.length > 5) {
+  if (resultStr.length > 1) {
     document.getElementById('lastfewresults').children[0].remove()
-    // resultStr.splice(0, 1)
-    console.log('resultStr >>>')
+    // console.log('resultStr >>>')
     console.log(resultStr)
   }
 
   const { heads, tails } = getCountOfHeadsAndTails(resultStr)
-  console.log(`tails --> ${tails} || heads --> ${heads}`)
+  // console.log(`tails --> ${tails} || heads --> ${heads}`)
+
+  document.getElementById('headsTotal').innerText = heads
+  document.getElementById('tailsTotal').innerText = tails
 
 });
 

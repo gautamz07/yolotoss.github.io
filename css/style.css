@@ -2,7 +2,20 @@
 
 :root {
   --flipCorder: #000;
-  --bodyColor: #808080
+  --bodyColor: #808080;
+
+  /*
+    -- Color pallet
+  */
+  --primaryGreen: #048b44;
+  --primaryYellow: #fbb404;
+  --secoundryGreen: #5b9a2e;
+  --secoundryYellow: #bfac14;
+  --paleLimeGreen: #96a31d;
+}
+
+*,*:after,*:before {
+  box-sizing: border-box;
 }
 
 body {
@@ -12,35 +25,66 @@ body {
   color: var(--bodyColor);
 }
 
-
-.header__container {
-  padding: 3rem 0;
-  /* margin-bottom: 4rem; */
+.container__main {
+  min-height: 80vh;
 }
 
-.heading--main {
-  font-size: 2rem;
+.hidden {
+  display: none;
+}
+
+.box__result {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  color: #D3D3D3;
-  /* text-shadow: 10px 10px 25px rgba(0,0,0,0.15), 
-    -10px 10px 25px rgba(0,0,0,0.15), 
-    -10px -10px 25px rgba(0,0,0,0.15),
-    10px -10px 25px rgba(0,0,0,0.15); */
-  /* text-shadow: 1px 1px 0 rgba(0,0,0,0.15),
-    2px 2px 0 rgba(0,0,0,0.15),
-    3px 3px 0 rgba(0,0,0,0.15); */
-    /* -1px -0px 0 rgba(0,0,0,0.15), */
-    /* -2px -0px 0 rgba(0,0,0,0.15); */
-  color: #77c3b4;
-  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.box__result > li:first-child {
+  margin-right: 0.75rem;
+}
+
+.box__result > li > span:first-child {
+  margin-right: 0.25rem;
+}
+
+.box__result > li > span:last-child {
+  font-weight: 500;
+}
+
+.box--coin {
+  font-size: 0.88rem;
+    padding: 0.5rem;
+    /* margin-top: 0.25rem; */
+    /* box-shadow: 0 0 5px rgba(0,0,0,.15); */
+    border-radius: 5px;
+    /* font-weight: 300; */
+    display: inline-block;
+    /* max-width: 70px; */
+    /* margin: 0.5rem auto; */
+    text-transform: capitalize;
+    /* color: #fff; */
+}
+
+.box--heads {
+  border: 1px solid var(--secoundryYellow);
+  /* background-color: var(--secoundryYellow); */
+}
+
+.box--tails {
+  border: 1px solid var(--secoundryGreen);
+  /* background-color: var(--secoundryGreen); */
 }
 
 .btn {
   font-family: 'Roboto', sans-serif;
   padding: 0.35rem 1rem;
-  border: 2px solid #ccc;
-  border-color: #24b37f;
-  background-color: #25ba84;
+  border:2px solid var(--primaryGreen);
+  background-color: var(--primaryGreen);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -51,7 +95,51 @@ body {
 .btn:active,
 .btn:focus {
   color: #fff;
-  background-color: #21a777;
+  background-color: var(--primaryGreen);
+}
+
+.btn--flipcoin {
+  position: relative;
+  min-width: 88px;
+  min-height: 30px;
+  line-height: 26px;
+  overflow: hidden;
+}
+
+.btn--flipcoin > .btnTxt--original {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.25s;
+  /* background: red; */
+}
+
+.btn--flipcoin > .onhover--text,
+.btn--flipcoin > .onhover--icon {
+  position: absolute;
+  left: 5px;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  transition: all 0.25s;
+}
+
+.btn--flipcoin > .onhover--icon {
+  text-align: left;
+  padding-left: 0.5rem;
+  left: 0;
+}
+
+.btn--flipcoin:hover > .btnTxt--original {
+  bottom: 100%;
+}
+
+.btn--flipcoin:hover > .onhover--text,
+.btn--flipcoin:hover > .onhover--icon {
+  top: 0;
 }
 
 a {
@@ -59,12 +147,12 @@ a {
 }
 
 .submain__header {
-  font-weight: 300;
+  font-weight: 600;
   font-size: 1rem;
   margin-top: 0;
 }
 
-.container__main {
+.outer__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +216,7 @@ main {
   top: 100%;
   top: calc(100% - 2px);
   height: 2px;
-  background: orange;
+  background: var(--primaryYellow);
   transition: width 0.5s;
 }
 
@@ -159,11 +247,11 @@ main {
 }
 
 .lastfewresults > li.heads {
-  background-color: #00D1ff;
+  background-color: var(--secoundryYellow);
 }
 
 .lastfewresults > li.tails {
-  background-color: #77c3b4;
+  background-color: var(--secoundryGreen);
 }
 
 .coin-wrapper {
@@ -194,7 +282,7 @@ main {
   transform-style: preserve-3d;
   backface-visibility: hidden;
 
-  background-image: url('../rupee.png');
+  background-image: url('../heads.png');
   background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -281,7 +369,7 @@ main {
     margin: 1rem 0;
   }
 
-  .container__main {
+  .outer__wrapper {
     flex-direction: column;
   }
 
@@ -304,3 +392,106 @@ main {
     - https://codepen.io/desandro/pen/LmWoWe
   - [ Way to make a 3D flip ] Stack Overflow :- https://stackoverflow.com/a/17533399
 */
+
+
+/* Additioanl unimportant css */
+
+.content__container {
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 992px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.content__header {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  background: #fff;
+  margin: 2rem auto;
+}
+
+.content__header--extramargin {
+  margin: 3rem auto;
+}
+
+
+.content__header:after {
+  background: linear-gradient(315deg, var(--primaryGreen), var(--primaryYellow));
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+    /* background: rgba(255,255,255,1); */
+  /* background: #FFF; */
+  transform: skew(2deg,2deg);
+  z-index: -1;
+  /* content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid orange; */
+}
+
+.content__header > h2,
+.content__header > h1 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.content__header > p {
+  margin: 0;
+}
+
+.content__datalist {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.content__datalist > li {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.content__datalist > li > span:first-child {
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+  font-size: 1.15rem;
+  /* background: tomato; */
+  /* border-bottom: 2px solid orange; */
+  /* color: #fff; */
+  /* border-radius: 5px; */
+}
+
+.content__datalist > li > span:first-child:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  right: 35%;
+  height: 1px;
+  background: var(--primaryYellow);
+}
+
+.content__datalist > li > span:last-child {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  /* font-size: ; */
+}
+
+.content__datalist > dd {
+  display: inline-block;
+}

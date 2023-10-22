@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="en-us">
-  <meta name="description" content="An amazing vertual coin toss/flip app that assists you in all of your needs for a coin toss app.">
+  <meta name="description" content="An amazing virtual coin toss/flip app that assists you in all of your needs for a coin toss app.">
   <meta name="keywords" content="Coin Toss, Coin Flip">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lets Toss - A Virtual Coin Toss App.</title>
@@ -19,38 +19,135 @@
 <body>
   <nav class="navigation">
     <ul>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>
+      <li><a href="faq-coin-toss.html">FAQ</a></li>
+      <li><a href="coin-toss-history.html">History</a></li>
     </ul>
   </nav>
   <main>
     <div>
-      <header class="header__container">
+      <!-- <header class="header__container">
         <h1 class="heading heading--main">Virtual coin toss</h1>
-      </header>
+      </header> -->
+      
       <section class="container__main">
 
-        <div class="inner__wrapper inner__wrapper--padded">
-          <div class="coin-wrapper" id="coin-wrapper">
-            <span class="coin-toss" id="coin-toss">
-            <!-- <span class="coin-toss coin-toss--reverse" id="coin-toss"> -->
-              <div class="head">
-    
-              </div>
-            </span>
+        <header class="content__header content__header--extramargin">
+          <h1>Virtual coin toss</h1>
+          <!-- <h1 class="heading heading--main">Virtual coin toss</h1> -->
+          <p>Flip a coin virtually</p>
+        </header>
+
+        <div class="outer__wrapper">
+          <div class="inner__wrapper inner__wrapper--padded">
+            <div class="coin-wrapper" id="coin-wrapper">
+              <span class="coin-toss" id="coin-toss">
+              <!-- <span class="coin-toss coin-toss--reverse" id="coin-toss"> -->
+                <div class="head">
+      
+                </div>
+              </span>
+            </div>
+            <button class="tossIt btn btn--flipcoin" id="tossIt">
+              <span class="btnTxt--original">Flip Coin</span>
+              <span class="onhover--text">Lets toss</span>
+              <span class="onhover--icon"><i>x</i></span>
+            </button>
           </div>
-          <button class="tossIt btn btn--flipcoin" id="tossIt"><span>Flip Coin</span></button>
-        </div>
-  
-        <div class="inner__wrapper" style="min-height: 225px;">
-        
-          <h2 class="submain__header">Last 5 coin toss results</h2>
-          <ul class="lastfewresults" id="lastfewresults">
-          </ul>
-  
+    
+          <div class="inner__wrapper" style="min-height: 260px;">
+
+            <h3 class="submain__header">Flip a coin results</h3>
+            <!-- <h3></h3> -->
+            <ul class="box__result">
+              <li><span>Heads</span><span class="box--coin box--heads" id="headsTotal">0</span></li>
+              <li><span>Tails</span><span class="box--coin box--tails" id="tailsTotal">0</span></li>
+            </ul>
+
+            <h3 class="submain__header">Last <span class="hidden">coin toss</span> result</h3>
+            <ul class="lastfewresults" id="lastfewresults">
+            </ul>
+    
+          </div>
         </div>
 
       </section>
 
+      <section class="content__container">
+
+        <header class="content__header">
+          <h2>Virtaul coin toss</h2>
+          <p>A brief history and purpose</p>
+        </header>
+
+        <p>
+          letstoss.com is a coin toss app designed to simulate the act of flipping a coin. While it may seem simple, there are several practical and entertaining uses for such an app. The app ensures that the outcome is random and unbiased. Flip a coin virtually on this app, so that we can help you decide between two options, such as where to eat, what movie to watch, or who goes first in a game.
+        </p>
+        <ul class="content__datalist">
+          <li>
+            <span>Decision Making</span>
+            <span>One of the most common uses of a coin toss app is for making decisions when you're unsure about a choice.</span>
+          </li>
+          <li>
+            <span>Settling Disputes</span>
+            <span>
+              When there is a disagreement or dispute between two or more people, a coin toss can be a fair and impartial way to settle it.
+            </span>
+          </li>
+          <li>
+            <span>
+              Sports and Games
+            </span>
+            <span>
+              Coin tosses are commonly used in sports like football to determine which team gets the first possession or choice of sides.
+            </span>
+          </li>
+          <li>
+            <span>
+              Random Selection
+            </span>
+            <span>
+              Sometimes, you may need to randomly select an item or a person from a list. An app that can flip a coin can provide a quick and easy way to make a random selection.
+            </span>
+          </li>
+          <li>
+            <span>
+              Probability and Statistics
+            </span>
+            <span>
+              If you're teaching or learning about probability and statistics, a virtual coin toss app can be a handy tool to demonstrate concepts related to probability distributions and random events.
+            </span>
+          </li> 
+          <li>
+            <span>
+              Pranks and Gags
+            </span>
+            <span>
+              Some people use virtual coin toss apps to play pranks on friends or create funny situations in social settings.
+            </span>
+          </li>    
+        </ul>
+
+        <p>
+          Other common use cases for virtual flip a coin tools would be Party Games,  Fair Division of tasks, Random Acts of Kindness.
+        </p>
+
+        <p>
+          Overall, a coin toss app like letstoss.com can be a versatile and fun tool for a variety of situations where random selection or decision-making is needed.
+        </p>
+
+      </section>
+
+      <!-- <section class="content__container">
+
+        <header class="content__header">
+          <h2>Testimonials</h2>
+          <p>Sent to us on instagram</p>
+        </header> -->
+
+        <!-- or maybe show testimonials from twitter -->
+      <!-- </section> -->
 
     </div>
   </main>
@@ -62,7 +159,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-2RJP93C9K6');
+    gtag('config', 'G-ZKCPL1W9PV');
   </script>
 </body>
 </html>
